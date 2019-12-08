@@ -1,0 +1,23 @@
+﻿@model SEOSample.Models.SearchResultModel
+@{
+    ViewData["Title"] = "Search Index Result";
+}
+
+<h1>Search Index Result</h1>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <div class="form-group">
+            <label asp-for="SearchResultIndex" class="custom-control-label">@Model.SearchResultIndex</label>
+        </div>
+    </div>
+</div>
+<div class="row">
+<div>
+    <div class="form-group">
+        @Html.ActionLink("Go Back", "Index","Search")
+    </div>
+</div>
+</div>
+
+

@@ -1,0 +1,30 @@
+﻿@model SEOSample.Models.SearchInputModel
+@{
+    ViewData["Title"] = "Get Search Index";
+}
+<h2>Get Index from Google Search</h2>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="SearchTerm" class="control-label"></label>
+                <input asp-for="SearchTerm" class="form-control" />
+                <span asp-validation-for="SearchTerm" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SearchURL" class="control-label"></label>
+                <input asp-for="SearchURL" class="form-control" type="url" />
+                <span asp-validation-for="SearchURL" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Get Index" class="btn btn-primary" formaction=@Url.Action("GetSearchIndex") formmethod="post" />
+            </div>
+        </form>
+    </div>
+</div>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
